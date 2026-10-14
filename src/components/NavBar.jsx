@@ -1,5 +1,5 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import "./Navbar.css";
+import "./NavBar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useLogoutMutation } from "../api/authApi";
 import { setUser } from "../features/auth/authSlice";
