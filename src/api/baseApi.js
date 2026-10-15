@@ -4,7 +4,7 @@ export const baseApi = createApi({
   reducerPath: "api",
 
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:4321",
+    baseUrl: "/api",
 
     credentials: "include",
   }),
