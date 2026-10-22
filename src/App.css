@@ -36,19 +36,16 @@
   cursor: pointer;
 }
 
-.terms button {
+.terms a {
   padding: 0;
-
-  border: none;
-
-  background: transparent;
   color: #8b5cf6;
-
   font-size: inherit;
+  text-decoration: none;
 }
 
-.terms button:hover {
+.terms a:hover {
   color: #a78bfa;
+  text-decoration: underline;
 }
 
 @media (max-width: 480px) {

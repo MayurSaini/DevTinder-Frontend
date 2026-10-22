@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Eye, EyeOff, Code2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 import { useSignupMutation } from "../api/authApi";
 
@@ -71,7 +71,7 @@ function Signup() {
           </div>
 
           <h1>
-            Dev<span>Tinder</span>
+            Twingle<span>.Live</span>
           </h1>
         </div>
 
@@ -80,7 +80,7 @@ function Signup() {
           <h2>Create your account</h2>
 
           <p>
-            Join DevTinder and connect with developers who match your skills.
+            Join Twingle.Live and connect with developers who match your skills.
           </p>
         </div>
 
@@ -234,12 +234,9 @@ function Signup() {
 
             <span>
               I agree to the{" "}
-              <button
-                type="button"
-                onClick={() => console.log("Terms")}
-              >
+              <Link to="/terms">
                 Terms & Conditions
-              </button>
+              </Link>
             </span>
           </label>
 

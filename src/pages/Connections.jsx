@@ -59,7 +59,7 @@ function Connections() {
                 )}
                 <div className="relationship-person-info">
                   <h2>{name}{person?.age ? <span>, {person.age}</span> : null}</h2>
-                  <p>{person?.about || person?.gender || "DevTinder connection"}</p>
+                  <p>{person?.about || person?.gender || "Twingle.Live connection"}</p>
                 </div>
                 <span className="relationship-connected">Connected</span>
               </article>

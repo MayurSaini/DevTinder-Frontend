@@ -23,7 +23,7 @@ console.log("user-==-=-=-=--=-==--=>", user);
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/feed" className="navbar-logo">
-          Dev<span>Tinder</span>
+          Twingle<span>.Live</span>
         </Link>
 
         {/* Navigation */}
@@ -43,6 +43,8 @@ console.log("user-==-=-=-=--=-==--=>", user);
 
         {/* Right Side */}
         <div className="navbar-right">
+          <Link to="/about" className="navbar-link">About</Link>
+          <Link to="/contact" className="navbar-link">Contact</Link>
              {user?.emailId && <button className="icon-button">🔔</button>}
           <Link to="/profile" className="profile-button">
             <div className="navbar-avatar">

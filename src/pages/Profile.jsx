@@ -82,7 +82,7 @@ const Profile = () => {
         <div className="profile-header">
           <div>
             <h1>My Profile</h1>
-            <p>Manage your DevTinder profile</p>
+            <p>Manage your Twingle.Live profile</p>
           </div>
 
           {!isEditing && (

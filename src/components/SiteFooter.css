@@ -1,0 +1,6 @@
+.site-footer { width: 100%; margin-top: auto; padding: 22px 24px; border-top: 1px solid #eceaf0; background: #fff; }
+.site-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; max-width: 1120px; margin: 0 auto; color: #888290; font-size: 12px; }
+.site-footer nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 18px; }
+.site-footer a { color: #645d6e; text-decoration: none; }
+.site-footer a:hover { color: #7047dc; text-decoration: underline; }
+@media (max-width: 680px) { .site-footer-inner { align-items: flex-start; flex-direction: column; } .site-footer nav { justify-content: flex-start; } }

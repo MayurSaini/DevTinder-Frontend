@@ -56,7 +56,7 @@ function Login() {
           </div>
 
           <h1>
-            Dev<span>Tinder</span>
+            Twingle<span>.Live</span>
           </h1>
         </div>
 
