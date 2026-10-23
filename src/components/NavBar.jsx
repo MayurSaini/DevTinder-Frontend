@@ -39,6 +39,9 @@ console.log("user-==-=-=-=--=-==--=>", user);
           <NavLink to="/requests" className={({ isActive }) => `navbar-link${isActive ? " active" : ""}`}>
             Requests
           </NavLink>
+          <NavLink to="/membership" className={({ isActive }) => `navbar-link${isActive ? " active" : ""}`}>
+            Premium
+          </NavLink>
         </nav>
 
         {/* Right Side */}

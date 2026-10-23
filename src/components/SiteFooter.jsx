@@ -14,6 +14,7 @@ export default function SiteFooter() {
           <Link to="/refund-policy">Refunds</Link>
           <Link to="/shipping-policy">Delivery</Link>
           <Link to="/pricing">Pricing</Link>
+          <Link to="/membership">Premium</Link>
         </nav>
       </div>
     </footer>
