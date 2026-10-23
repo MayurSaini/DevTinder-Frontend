@@ -24,6 +24,22 @@
 .is-featured .membership-select { border-color: #c5a0ed; color: #21162f; background: #d1aaff; }
 .is-featured .membership-select:hover { background: #dfc5ff; }
 .membership-select:focus-visible { outline: 2px solid #e0c5ff; outline-offset: 3px; }
+.membership-select:disabled { opacity: .72; cursor: wait; }
+.membership-checking { display: flex; min-height: 52vh; align-items: center; justify-content: center; gap: 12px; color: #d7c9e9; font-size: 14px; }
+.membership-spinner, .membership-button-spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255, 255, 255, .28); border-top-color: currentColor; border-radius: 50%; animation: membership-spin .75s linear infinite; }
+.membership-spinner { width: 20px; height: 20px; border-color: rgba(210, 180, 255, .25); border-top-color: #d2b4ff; }
+@keyframes membership-spin { to { transform: rotate(360deg); } }
+.membership-active { display: flex; min-height: 60vh; max-width: 650px; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; text-align: center; }
+.membership-active-icon { display: grid; width: 72px; height: 72px; place-items: center; margin-bottom: 22px; border: 1px solid rgba(203, 165, 255, .4); border-radius: 22px; color: #d8baff; background: rgba(177, 119, 241, .13); box-shadow: 0 0 50px rgba(164, 99, 235, .15); }
+.membership-active h1 { margin: 17px 0 14px; color: #fff; font-size: clamp(38px, 6vw, 62px); font-weight: 760; line-height: 1.02; letter-spacing: -2.7px; }
+.membership-active h1 span { color: #c8a2ff; }
+.membership-active > p { max-width: 500px; color: #aaa2b7; font-size: 15px; line-height: 1.7; }
+.membership-active-benefits { display: grid; gap: 13px; margin: 27px 0; padding: 19px 24px; border: 1px solid #342a40; border-radius: 15px; background: rgba(255, 255, 255, .035); text-align: left; }
+.membership-active-benefits span { display: flex; align-items: center; gap: 10px; color: #ded5e9; font-size: 13px; }
+.membership-active-benefits svg { color: #c69af4; }
+.membership-back-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 0 20px; border-radius: 11px; color: #21162f; background: #d1aaff; font-size: 13px; font-weight: 750; text-decoration: none; transition: background .18s; }
+.membership-back-link:hover { background: #dfc5ff; }
+.membership-active .membership-feedback { margin-top: 17px; color: #d7c9e9; font-size: 13px; }
 .membership-divider { height: 1px; margin: 23px 0 17px; background: #3b3345; }
 .membership-includes { margin: 0 0 13px; color: #92889d; font-size: 9px; font-weight: 800; letter-spacing: .14em; }
 .membership-card ul { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
