@@ -9,6 +9,7 @@ import Requests from "./pages/Requests";
 import SiteInfoPage from "./pages/SiteInfoPage";
 import SiteFooter from "./components/SiteFooter";
 import MembershipPage from "./pages/MembershipPage";
+import ChatPage from "./pages/ChatPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/connections" element={<Connections />} />
+        <Route path="/chat/:targetUserId" element={<ChatPage />} />
         <Route path="/requests" element={<Requests />} />
         <Route path="/about" element={<SiteInfoPage page="about" />} />
         <Route path="/contact" element={<SiteInfoPage page="contact" />} />

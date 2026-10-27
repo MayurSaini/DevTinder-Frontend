@@ -39,14 +39,6 @@
   color: #e94057;
 }
 
-/* Navigation */
-
-.navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
 .navbar-link {
   color: #666666;
 
@@ -65,6 +57,29 @@
 .navbar-link.active {
   color: #7047dc;
 }
+
+.navbar-menu-button { display: inline-flex; align-items: center; gap: 8px; margin-right: auto; margin-left: 26px; padding: 9px 12px; border: 1px solid #ece9f0; border-radius: 10px; color: #494253; background: #fff; font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; transition: border-color .18s, background .18s, color .18s; }
+.navbar-menu-button:hover { border-color: #d8c8eb; color: #7047dc; background: #faf8fd; }
+.navbar-menu-button:focus-visible, .navigation-drawer-close:focus-visible, .navigation-drawer-link:focus-visible { outline: 2px solid #9662d5; outline-offset: 3px; }
+
+.navigation-overlay { position: fixed; inset: 0; z-index: 1100; display: flex; justify-content: flex-start; background: rgba(19, 15, 27, .43); backdrop-filter: blur(3px); animation: nav-overlay-in .18s ease-out; }
+.navigation-drawer { display: flex; width: min(370px, calc(100vw - 28px)); height: 100%; flex-direction: column; padding: 26px 22px; border-right: 1px solid #eee9f3; background: #fff; box-shadow: 18px 0 55px rgba(28, 20, 38, .18); animation: nav-drawer-in .22s ease-out; }
+.navigation-drawer-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 8px 3px 24px; border-bottom: 1px solid #f0edf3; }
+.navigation-drawer-kicker { color: #8d6ab3; font-size: 10px; font-weight: 800; letter-spacing: .13em; }
+.navigation-drawer-header h2 { margin: 6px 0 0; color: #211a2b; font-size: 26px; font-weight: 750; letter-spacing: -.6px; }
+.navigation-drawer-close { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid #eee9f3; border-radius: 11px; color: #5d5665; background: white; cursor: pointer; }
+.navigation-drawer-close:hover { color: #7047dc; background: #faf8fd; }
+.navigation-drawer-links { display: grid; gap: 7px; padding-top: 20px; }
+.navigation-drawer-link { display: flex; align-items: center; gap: 14px; padding: 13px 12px; border: 1px solid transparent; border-radius: 13px; color: #706978; text-decoration: none; transition: background .18s, color .18s, border-color .18s; }
+.navigation-drawer-link > svg { flex: 0 0 auto; color: #927ba9; }
+.navigation-drawer-link > span { display: grid; gap: 3px; }
+.navigation-drawer-link strong { color: #312a3a; font-size: 14px; font-weight: 700; }
+.navigation-drawer-link small { color: #898391; font-size: 11px; }
+.navigation-drawer-link:hover, .navigation-drawer-link.active { border-color: #ede4f6; background: #f8f4fc; }
+.navigation-drawer-link.active > svg, .navigation-drawer-link.active strong { color: #7047dc; }
+.navigation-drawer-footer { margin-top: auto; padding: 17px 13px 4px; border-top: 1px solid #f0edf3; color: #928a99; font-size: 12px; }
+@keyframes nav-overlay-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes nav-drawer-in { from { transform: translateX(-18px); opacity: .7; } to { transform: translateX(0); opacity: 1; } }
 
 /* Right */
 
@@ -137,13 +152,11 @@
     padding: 0 16px;
   }
 
-  .navbar-links {
-    display: none;
-  }
-
   .navbar-logo {
     font-size: 21px;
   }
+
+  .navbar-menu-button { margin-left: 14px; padding: 8px 10px; }
 
   .profile-button span {
     display: none;
@@ -152,4 +165,22 @@
   .logout-button {
     padding: 8px 11px;
   }
+}
+
+@media (max-width: 480px) {
+  .navbar { height: 64px; }
+  .navbar-container { padding: 0 11px; }
+  .navbar-right { gap: 9px; }
+  .navbar-menu-button { gap: 0; margin-left: 8px; padding: 8px; }
+  .navbar-right { gap: 6px; }
+  .navbar-right > .navbar-link { font-size: 11px; }
+  .navbar-menu-button span { display: none; }
+  .navbar-logo { font-size: 19px; }
+  .logout-button { padding: 7px 9px; font-size: 12px; }
+  .navbar-avatar { width: 34px; height: 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-overlay, .navigation-drawer { animation: none; }
+  .navbar-menu-button, .navigation-drawer-link { transition: none; }
 }

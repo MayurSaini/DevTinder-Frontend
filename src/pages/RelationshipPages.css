@@ -206,6 +206,41 @@
   color: #a46713;
 }
 
+.connection-card-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 9px;
+}
+
+.connection-chat-button {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid #e3d8f3;
+  border-radius: 10px;
+  color: #6946bb;
+  background: #f8f5ff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+}
+
+.connection-chat-button:hover {
+  transform: translateY(-1px);
+  border-color: #cbb8e8;
+  background: #f0eaff;
+}
+
+.connection-chat-button:focus-visible {
+  outline: 2px solid #8961cc;
+  outline-offset: 2px;
+}
+
 .relationship-person.request-person {
   display: grid;
   grid-template-columns: 54px minmax(0, 1fr);
@@ -485,6 +520,20 @@
     padding: 14px;
   }
 
+  .relationship-person:not(.request-person) {
+    flex-wrap: wrap;
+  }
+
+  .relationship-person:not(.request-person) .relationship-person-info {
+    flex: 1 1 calc(100% - 72px);
+  }
+
+  .connection-card-actions {
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 68px;
+  }
+
   .request-modal-content {
     padding-right: 21px;
     padding-left: 21px;
@@ -507,7 +556,8 @@
   .relationship-person,
   .relationship-primary,
   .relationship-retry,
-  .view-request-profile {
+  .view-request-profile,
+  .connection-chat-button {
     transition: none;
   }
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { RefreshCw, UsersRound } from "lucide-react";
+import { RefreshCw, UsersRound, MessageCircle } from "lucide-react";
 import { useGetConnectionsQuery } from "../api/feedApi";
 import "./RelationshipPages.css";
 
@@ -46,7 +46,10 @@ function Connections() {
       ) : (
         <section className="relationship-grid" aria-label="Your connections">
           {connections.map((connection, index) => {
-            const person = connection?.connectedUser ?? connection?.user ?? connection;
+            const personValue = connection?.connectedUser ?? connection?.user ?? connection?.connectedUserId ?? connection?.userId ?? connection;
+            const person = typeof personValue === "object" ? personValue : connection;
+            const personId = person?._id ?? person?.userId ?? connection?.connectedUserId ?? connection?.userId ?? connection?._id ?? personValue;
+            const chatUserId = personId ?? connection?.id ?? `connection-${index}`;
             const name = [person?.firstName, person?.lastName].filter(Boolean).join(" ") || "Developer";
             return (
               <article className="relationship-person" key={connection?._id ?? person?._id ?? index}>
@@ -61,7 +64,17 @@ function Connections() {
                   <h2>{name}{person?.age ? <span>, {person.age}</span> : null}</h2>
                   <p>{person?.about || person?.gender || "Twingle.Live connection"}</p>
                 </div>
-                <span className="relationship-connected">Connected</span>
+                <div className="connection-card-actions">
+                  <span className="relationship-connected">Connected</span>
+                  <Link
+                    className="connection-chat-button"
+                    to={`/chat/${encodeURIComponent(String(chatUserId))}`}
+                    state={{ person: { ...person, _id: chatUserId } }}
+                    aria-label={`Open chat with ${name}`}
+                  >
+                    <MessageCircle size={16} /> Chat
+                  </Link>
+                </div>
               </article>
             );
           })}
